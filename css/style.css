@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+.container {
+  width: 1120px;
+  margin: 50px auto;
+}
+
+.circle {
+  width: 40vw;
+  height: 80vh;
+  border-radius: 50%;
+  background-color: bisque;
+  margin: 0 auto;
+  position: relative;
+  border: 10px outset sandybrown;
+  outline-offset: 10px;
+  outline: 50px inset sandybrown;
+}
+
+.circle span {
+  font-size: 48px;
+}
+
+.circle span:nth-child(1) {
+  position: absolute;
+  left: 250px;
+  top: 10px;
+}
+
+.circle span:nth-child(2) {
+  position: absolute;
+  right: 150px;
+  top: 30px;
+}
+
+.circle span:nth-child(3) {
+  position: absolute;
+  right: 60px;
+  top: 100px;
+}
+
+.circle span:nth-child(4) {
+  position: absolute;
+  right: 20px;
+  top: 220px;
+}
+
+.circle span:nth-child(5) {
+  position: absolute;
+  right: 50px;
+  bottom: 130px;
+}
+
+.circle span:nth-child(6) {
+  position: absolute;
+  right: 140px;
+  bottom: 40px;
+}
+
+.circle span:nth-child(7) {
+  position: absolute;
+  left: 260px;
+  bottom: 10px;
+}
+
+.circle span:nth-child(8) {
+  position: absolute;
+  left: 130px;
+  bottom: 40px;
+}
+
+.circle span:nth-child(9) {
+  position: absolute;
+  left: 50px;
+  bottom: 130px;
+}
+
+.circle span:nth-child(10) {
+  position: absolute;
+  left: 20px;
+  top: 220px;
+}
+
+.circle span:nth-child(11) {
+  position: absolute;
+  left: 55px;
+  top: 110px;
+}
+
+.circle span:nth-child(12) {
+  position: absolute;
+  left: 140px;
+  top: 35px;
+}
+
+.clock-center {
+  width: 60px;
+  height: 60px;
+  border: 30px double rgb(111, 100, 177);
+  position: absolute;
+  top: 220px;
+  left: 240px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock-center__child {
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.clock-line {
+  width: 280px;
+  height: 12px;
+  background: linear-gradient(
+    90deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(210, 173, 121, 1) 100%
+  );
+  position: absolute;
+  top: 242px;
+  left: 235px;
+  animation: anim 60s infinite linear;
+  z-index: 2;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.clock-line_hour {
+  width: 150px;
+  height: 18px;
+  background: linear-gradient(
+    90deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(210, 173, 121, 1) 100%
+  );
+  position: absolute;
+  top: 240px;
+  left: 260px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  animation: anim_min 43200s infinite linear;
+}
+
+.clock-line_min {
+  width: 220px;
+  height: 15px;
+  background: linear-gradient(
+    90deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(210, 173, 121, 1) 100%
+  );
+  position: absolute;
+  top: 240px;
+  left: 260px;
+  transform: rotate(45deg);
+  transform-origin: 10px center;
+  z-index: 1;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  animation: anim_min 3600s infinite linear;
+}
+
+@keyframes anim {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 30px center;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: 30px center;
+  }
+}
+
+@keyframes anim_min {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 5px center;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: 5px center;
+  }
+}
+
+@keyframes anim_hour {
+  from {
+    transform: rotate(0deg);
+    transform-origin: left center;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: left center;
+  }
+}
